@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartDorm Energy System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="brand">⚡ SmartDorm</div>
+        <div class="subtitle">Smart Dormitory Energy System</div>
+      </div>
+      <button class="icon-btn" id="notificationBtn" aria-label="Notifikasi">🔔<span class="dot"></span></button>
+    </header>
+
+    <main>
+      <section class="hero-card">
+        <div>
+          <p class="greeting">Morning, Bolo! 👋</p>
+          <h1>Asrama lebih hemat,<br>nyaman & ramah lingkungan.</h1>
+          <p class="hero-small">Pantau dan kendalikan energi asrama dalam satu aplikasi.</p>
+        </div>
+        <div class="hero-icon">🌱</div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span class="eyebrow">ENERGI HARI INI</span>
+          <h2>Ringkasan Penggunaan</h2>
+        </div>
+        <span class="status-pill">● Normal</span>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-icon yellow">⚡</span>
+          <div><strong id="energyValue">19.5</strong><span> kWh</span></div>
+          <small>Total Energi</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon green">🌿</span>
+          <div><strong id="savingValue">15</strong><span>%</span></div>
+          <small>Penghematan</small>
+        </div>
+        <div class="stat-card">
+          <span class="stat-icon blue">☀️</span>
+          <div><strong id="solarValue">7.8</strong><span> kWh</span></div>
+          <small>Dari Panel Surya</small>
+        </div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span class="eyebrow">MONITORING</span>
+          <h2>Penggunaan Energi</h2>
+        </div>
+        <select id="periodSelect">
+          <option>Hari ini</option>
+          <option>Minggu ini</option>
+          <option>Bulan ini</option>
+        </select>
+      </section>
+
+      <section class="chart-card">
+        <div class="chart-header">
+          <span>kWh</span>
+          <span class="chart-total">18.6 kWh</span>
+        </div>
+        <div class="chart">
+          <div class="bar" style="height:42%"><span>06</span></div>
+          <div class="bar" style="height:58%"><span>09</span></div>
+          <div class="bar active" style="height:78%"><span>12</span></div>
+          <div class="bar" style="height:61%"><span>15</span></div>
+          <div class="bar" style="height:86%"><span>18</span></div>
+          <div class="bar" style="height:49%"><span>21</span></div>
+          <div class="bar" style="height:32%"><span>24</span></div>
+        </div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span class="eyebrow">KONTROL KAMAR</span>
+          <h2>Kamar Grushiver</h2>
+        </div>
+        <span class="room-status" id="roomStatus">● Penghuni Terdeteksi</span>
+      </section>
+
+      <section class="control-grid">
+        <button class="device-card active" data-device="lampu">
+          <span class="device-icon">💡</span>
+          <div><strong>Lampu</strong><small id="lampuState">ON</small></div>
+          <span class="switch on"></span>
+        </button>
+
+        <button class="device-card active" data-device="ac">
+          <span class="device-icon">❄️</span>
+          <div><strong>AC</strong><small id="acState">ON • 24°C</small></div>
+          <span class="switch on"></span>
+        </button>
+
+        <button class="device-card" data-device="kipas">
+          <span class="device-icon">🌀</span>
+          <div><strong>Kipas</strong><small id="kipasState">OFF</small></div>
+          <span class="switch"></span>
+        </button>
+
+        <button class="device-card" data-device="charger">
+          <span class="device-icon">🔌</span>
+          <div><strong>Charger</strong><small id="chargerState">OFF</small></div>
+          <span class="switch"></span>
+        </button>
+      </section>
+
+      <section class="quick-actions">
+        <button id="allOffBtn">⏻ Matikan semua</button>
+        <button id="ecoBtn">🌿 Mode Hemat</button>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span class="eyebrow">PEMAKAIAN ASRAMA</span>
+          <h2>Perangkat Aktif</h2>
+        </div>
+      </section>
+
+      <section class="room-list">
+        <div class="room-row"><span class="room-avatar">🛏️</span><div><strong>Kamar Grushiver</strong><small>3 perangkat aktif</small></div><b>12.4 kWh</b></div>
+        <div class="room-row"><span class="room-avatar">🍳</span><div><strong>Dapur Pusat</strong><small>2 perangkat aktif</small></div><b>2.8 kWh</b></div>
+        <div class="room-row"><span class="room-avatar">📚</span><div><strong>Perpustakaan</strong><small>1 perangkat aktif</small></div><b>1.9 kWh</b></div>
+        <div class="room-row"><span class="room-avatar">🏢</span><div><strong>Fasilitas Umum</strong><small>4 perangkat aktif</small></div><b>1.5 kWh</b></div>
+      </section>
+
+      <section class="eco-banner">
+        <div class="leaf">🌱</div>
+        <div>
+          <strong>Bagus! Kalian sedang hemat energi.</strong>
+          <p>Penggunaan hari ini 14% lebih rendah dari rata-rata.</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-item active" data-page="home"><span>⌂</span>Beranda</button>
+      <button class="nav-item" data-page="monitor"><span>▥</span>Monitoring</button>
+      <button class="nav-item" data-page="notice"><span>♧</span>Notifikasi</button>
+      <button class="nav-item" data-page="profile"><span>◎</span>Profil</button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
